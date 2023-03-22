@@ -76,7 +76,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    background: #fff;
+    background: $brand1;
     transition: all 0.5s;
     z-index: 997;
     padding: 20px 0;
@@ -88,7 +88,7 @@ h6 {
         font-size: 20px;
         margin: 0;
         padding: 5px;
-        background-color: $brand1;
+        // background-color: $brand1;
         line-height: 1;
         font-weight: 700;
         letter-spacing: 0.5px;
@@ -113,32 +113,38 @@ h6 {
 #hero {
     width: 100%;
     height: 80vh;
-    background: #fff;
+    background: $brand1;
     padding-top: 82px;
-    h1 {
-        margin: 10px 0 30px 0;
-        font-size: 48px;
+    // h1 {
+    //     margin: 10px 0 30px 0;
+    //     font-size: 48px;
+    //     font-weight: 700;
+    //     line-height: 56px;
+    //     color: $lighter;
+    // }
+    h3 {
         font-weight: 700;
-        line-height: 56px;
-        color: #3e4450;
+        font-size: 32px;
+        color: $lighter;
     }
     h2 {
-        color: #858ea1;
+        color: $brand3;
         margin: 0;
         font-size: 24px;
+        margin-bottom: 30px;
     }
     .btn-get-started {
         // font-family: "Raleway", sans-serif;
         font-family: 'Inter Tight';
-        font-weight: 500;
+        font-weight: 600;
         font-size: 16px;
         letter-spacing: 1px;
         display: inline-block;
         padding: 10px 30px 10px 30px;
         border-radius: 4px;
         transition: 0.5s;
-        color: #fff;
-        background: $brand2;
+        color: $brand1;
+        background: $lighter;
         box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
         &:hover {
             background: $brand3;
@@ -147,6 +153,38 @@ h6 {
     }
     .animated {
         animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    }
+    .content{
+        color: $light;
+        h3 {
+            font-weight: 700;
+            font-size: 32px;
+            color: $lighter;
+        }   
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+            li {
+                padding-bottom: 25px;
+            }
+            i {
+                font-size: 20px;
+                padding-right: 4px;
+                color: $brand2;
+            }
+            strong{
+                font-size: 20px;
+                color: $light;
+            }
+            p{
+                padding-left: 28px;
+                margin-bottom: 15px;
+            }
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
   
@@ -221,7 +259,7 @@ section {
         text-transform: uppercase;
         margin-bottom: 20px;
         padding-bottom: 0;
-        color: #5f687b;
+        color: $brand1;
         position: relative;
         z-index: 2;
     }
@@ -260,7 +298,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-    background-color: $brand1;
+    background-color: #ffffff;
     .content{
         color: $light;
         h3 {
@@ -292,7 +330,40 @@ section {
             margin-bottom: 0;
         }
     }
+    .animated {
+        animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    }   
 }
+@media (max-width: 991px) {
+    .about {
+        height: 100vh;
+        .animated {
+            animation: none;
+        }
+        .hero-img {
+            text-align: center;
+            img {
+                width: 50%;
+            }
+        }
+    } 
+}
+
+@media (max-width: 768px) {
+    .about {
+        height: auto;
+        .hero-img img {
+            width: 70%;
+        }
+    }
+}
+  
+@media (max-width: 575px) {
+    .about .hero-img img {
+      width: 80%;
+    }
+}
+ 
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -374,6 +445,7 @@ section {
     padding-left: 00px; 
     .lead {
         width: 100%;
+        border: 1px solid #eeeeee;
         border-top: 3px solid $brand2;
         border-bottom: 3px solid $brand2;
         padding: 30px;
@@ -422,5 +494,47 @@ section {
 @media (min-width: 991px) {
     .lead-form {
         padding-left: 60px; 
+    }
+}
+
+/*--------------------------------------------------------------
+# Featured Services
+--------------------------------------------------------------*/
+.featured-services {
+    padding: 60px 0;
+    .icon-box {
+        padding: 20px;
+        color: #5f687b;
+        background: #f9f9fa;
+        border-radius: 4px;
+        border: 1px solid #f9f9fa;
+        transition: 0.3s;
+        height: 100%;
+        &:hover {
+            border-color: #eaecef;
+            .title a {
+                color: $brand2;
+            }
+        }
+    }
+    .icon {
+        margin: 0 0 15px 0;
+    }
+    i {
+        color: $brand2;
+        font-size: 36px;
+    }
+    .title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    a {
+        color: $brand1;
+        transition: 0.3s;
+    }
+    .description {
+        line-height: 24px;
+        font-size: 14px;
     }
 }
